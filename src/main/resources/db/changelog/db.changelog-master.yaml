@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: postgres
+      changes:
+        - sqlFile:
+            dbms: "postgresql"
+            path:  db/changelog/scripts/tables.sql
+
+  - changeSet:
+      id: 2
+      author:  postgres
+      changes:
+        - sqlFile:
+            dbms: "postgresql"
+            path:  db/changelog/scripts/tables-data.sql
+
