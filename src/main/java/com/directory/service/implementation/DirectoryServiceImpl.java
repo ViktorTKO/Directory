@@ -1,4 +1,4 @@
-package com.directory.service.realisation;
+package com.directory.service.implementation;
 
 import com.directory.domain.entity.DirectoryEntity;
 import com.directory.domain.repository.DirectoryRepository;
@@ -11,13 +11,13 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
 public class DirectoryServiceImpl implements DirectoryService {
     @Autowired
     private DirectoryRepository directoryRepository;
+
     @Override
     public DirectoryEntity createDirectory(DirectoryEntity directory) {
-        return  directoryRepository.save(directory);
+        return directoryRepository.save(directory);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class DirectoryServiceImpl implements DirectoryService {
 
     @Override
     public void deleteDirectoryById(int id) {
-    directoryRepository.getById(id);
+        directoryRepository.deleteById(id);
     }
 
     @Override
@@ -38,10 +38,10 @@ public class DirectoryServiceImpl implements DirectoryService {
 
     @Override
     public DirectoryEntity updateDirectory(int id, DirectoryEntity directory) {
-        DirectoryEntity directoryEntity =  directoryRepository.getById(id);
+        DirectoryEntity directoryEntity = directoryRepository.getById(id);
         directoryEntity.setId(directory.getId());
         directoryEntity.setName(directory.getName());
         directoryEntity.setShortName(directory.getShortName());
-        return (DirectoryEntity) directoryRepository.save(directoryEntity);
+        return directoryRepository.save(directoryEntity);
     }
 }

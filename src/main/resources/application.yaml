@@ -1,8 +1,4 @@
 spring:
-  mvc:
-    view:
-      prefix: /templates/jsp/
-      suffix: .jsp
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/directory_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC

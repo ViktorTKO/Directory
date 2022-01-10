@@ -3,20 +3,20 @@ package com.directory.domain.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="directory")
+@Table(name = "directory")
 public class DirectoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name="shortname")
+    @Column(name = "shortname")
     private String shortName;
 
-    public DirectoryEntity(){
+    public DirectoryEntity() {
 
     }
 
@@ -24,11 +24,6 @@ public class DirectoryEntity {
         this.id = id;
         this.name = name;
         this.shortName = shortName;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 
     public int getId() {

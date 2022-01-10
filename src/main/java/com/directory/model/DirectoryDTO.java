@@ -7,7 +7,7 @@ public class DirectoryDTO {
     private String name;
     private String shortName;
 
-    public DirectoryDTO(){
+    public DirectoryDTO() {
     }
 
     public DirectoryDTO(int id, String name, String shortName) {
@@ -39,19 +39,20 @@ public class DirectoryDTO {
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
-    public DirectoryDTO convertDirectoryEntityToDTO(DirectoryEntity directory){
-        return  new DirectoryDTO(
-            directory.getId(),
+
+    public static DirectoryDTO convertDirectoryEntityToDTO(DirectoryEntity directory) {
+        return new DirectoryDTO(
+                directory.getId(),
                 directory.getName(),
                 directory.getShortName()
         );
     }
 
-    public DirectoryEntity convertDirectoryDTOToDirectoryEntity(DirectoryDTO directoryDTO){
-        return  new DirectoryEntity(
-                directoryDTO.getId(),
-                directoryDTO.getName(),
-                directoryDTO.getShortName()
+    public DirectoryEntity convertDirectoryDTOToDirectoryEntity() {
+        return new DirectoryEntity(
+                this.getId(),
+                this.getName(),
+                this.getShortName()
         );
     }
 }
